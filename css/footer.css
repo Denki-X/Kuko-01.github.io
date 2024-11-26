@@ -1,0 +1,51 @@
+#abajo{
+    background: #010c20;
+    margin-top: 70px;
+    width: 100%;
+    height: 265px;
+}
+
+#abajo #img{
+    float: left;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 100px;
+}
+
+#abajo #img img{
+    width: 270px;
+    height: 120px;
+}
+
+#abajo #txt_1{
+    float: left;
+    margin: 20px;
+    margin-left: 200px;
+    color: white;
+}
+
+#abajo #txt_1 h1{
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#abajo #txt_1 div{
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 20px;    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#abajo div {
+    color: #939393;
+}
+
+#abajo #txt_2{
+    border-top: 2px solid #FFF;
+    float: left;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    padding: 10px;
+}

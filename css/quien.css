@@ -1,0 +1,86 @@
+#medio_quien{
+    width: 100%;
+    height: 900px;
+}
+
+#medio_quien div.titulo{
+    text-align: center;
+    color: #0e2752;
+    margin-top: 30px;
+    font-size: 36px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serifs;
+    margin-left: 43%;
+}
+
+#medio_quien div{
+    text-align: center; 
+}
+
+#medio_quien div img{
+    margin-left: 0;
+    margin-right: 40px;
+    padding-top: 30px;
+}
+
+#medio_quien div.titulo{
+    text-align: center;
+    color: #0e2752;
+    padding-top: 10px;
+}
+
+#medio_quien div div{
+    padding-left: 30px;  
+}
+
+#medio_quien p.uno_quien{
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 80%;
+    height: 190px;
+    padding: 8%;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    text-align: justify;
+    color: rgb(26, 75, 131);
+    margin-left: 8%;
+    margin-top: 30px;
+}
+
+#medio_quien div.dos{
+    width: 450px;
+    height: 220px;
+    font-size: 18px;
+    padding: 5px;
+    padding-top: 15px;
+    color: rgb(26, 75, 131);
+    float: left;
+    margin-left: 13.5%;
+    margin-bottom: 30px;
+}
+
+img.tres{
+    padding: 0;
+    margin-top: -50px;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.titulo2_quien h1{
+    color: #0e2752;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serifs;
+    text-align: center;
+}
+
+.vision_quien{
+    width: 100%;
+    height: 240px;
+    margin-top: 20px;
+}
+
+.dos_quien{
+    font-size: 20px;
+    text-align: justify;
+}

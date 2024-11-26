@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la Encuesta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Resultado de la Encuesta</h1>
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $rating = $_POST['rating'];
+                echo "<p>Gracias por tu valoración: <strong>$rating</strong></p>";
+            } else {
+                echo "<p>No se recibió ninguna valoración.</p>";
+            }
+        ?>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Mi Servicio. Todos los derechos reservados.</p>
+            <p>Contacto: info@miservicio.com | Tel: +123 456 7890</p>
+        </div>
+    </footer>
+
+    <div class="social-menu">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </div>
+</body>
+</html>

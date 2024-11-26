@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVALUACION ONLINE</title>
+  <link rel="stylesheet" href="estilo2.css">
+</head>
+
+<body>
+
+  <h1>CALIFICANOS</h1>
+
+  <!-- Datos Personales -->
+  <div class="contenedor">
+    <h3>LLENA TUS DATOS PERSONALES</h3><hr>
+    <div class="opciones2">
+      <br>
+      Apellido Paterno:&emsp;<input type="text" name="pat" id="pat" value="Laime"><br><br>
+      Apellido Materno:&emsp;<input type="text" name="mat" id="mat" value="Murillo"><br><br>
+      Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;<input type="text" name="nom" id="nom" value="Luis"><br><br>
+    </div>
+    <button class="siguiente" onclick="siguiente(1)">ACEPTAR</button>
+  </div>
+
+  <!-- Pregunta 1 -->
+  <div class="contenedor">
+    <h3>¿Como califica nuestra p&aacute;gina?</h3><hr>
+    <div class="opciones">
+      <br>
+      <input type="radio" name="pregunta1" id="MB1" checked>Muy Bueno<br><br>
+      <input type="radio" name="pregunta1" id="B1">Bueno<br><br>
+      <input type="radio" name="pregunta1" id="R1">Regular<br><br>
+      <input type="radio" name="pregunta1" id="M1">Malo<br><br>
+    </div>
+    <button class="siguiente" onclick="siguiente(2)">SIGUIENTE</button>
+  </div>
+
+  <!-- Pregunta 2 -->
+  <div class="contenedor">
+    <h3>¿Qué le parecen los precios de nuestros productos?</h3><hr>
+    <div class="opciones">
+      <br>
+      <input type="radio" name="pregunta2" id="MB2" checked>Muy Bueno<br><br>
+      <input type="radio" name="pregunta2" id="B2">Bueno<br><br>
+      <input type="radio" name="pregunta2" id="R2">Regular<br><br>
+      <input type="radio" name="pregunta2" id="M2">Malo<br><br>
+    </div>
+    <button class="siguiente" onclick="siguiente(3)">SIGUIENTE</button>
+  </div>
+
+  <!-- Pregunta 3 -->
+  <div class="contenedor">
+    <h3>¿Que opinas de la variedad de nuestros productos disponibles?</h3><hr>
+    <div class="opciones">
+      <br>
+      <input type="radio" name="pregunta3" id="MB3" checked>Muy Bueno<br><br>
+      <input type="radio" name="pregunta3" id="B3">Bueno<br><br>
+      <input type="radio" name="pregunta3" id="R3">Regular<br><br>
+      <input type="radio" name="pregunta3" id="M3">Malo<br><br>
+    </div>
+    <button class="siguiente" onclick="siguiente(4)">SIGUIENTE</button>
+  </div>
+
+  <!-- Pregunta 4 -->
+  <div class="contenedor">
+    <h3>¿Como calificas la calidad de la informacion de los productos ofrecidos?</h3><hr>
+    <div class="opciones">
+      <br>
+      <input type="radio" name="pregunta4" id="MB4" checked>Muy Bueno<br><br>
+      <input type="radio" name="pregunta4" id="B4">Bueno<br><br>
+      <input type="radio" name="pregunta4" id="R4">Regular<br><br>
+      <input type="radio" name="pregunta4" id="M4">Malo<br><br>
+    </div>
+    <button class="siguiente" onclick="siguiente(5)">SIGUIENTE</button>
+  </div>
+
+  <!-- Pregunta 5 -->
+  <div class="contenedor">
+    <h3>¿Como calificarias la relacion calidad-precio de los productos adquiridos?</h3><hr>
+    <div class="opciones">
+      <br>
+      <input type="radio" name="pregunta5" id="MB5" checked>Muy Bueno<br><br>
+      <input type="radio" name="pregunta5" id="B5">Bueno<br><br>
+      <input type="radio" name="pregunta5" id="R5">Regular<br><br>
+      <input type="radio" name="pregunta5" id="M5">Malo<br><br>
+    </div>
+    <button onclick="resultado()">ENVIAR CUESTIONARIO</button>
+  </div>
+
+  <script>
+    // Muestra la primera pregunta
+    document.getElementsByClassName('contenedor')[0].style.display = "block";
+
+    // Función para mostrar la siguiente pregunta
+    function siguiente(id) {
+      // Oculta la pregunta actual y muestra la siguiente
+      document.getElementsByClassName('contenedor')[id - 1].style.display = "none";
+      document.getElementsByClassName('contenedor')[id].style.display = "block";
+    }
+
+    // Función para calcular el resultado y mostrar si aprobó o reprobó
+    function resultado() {
+      let nombre = document.getElementById("nom").value;
+      let paterno = document.getElementById("pat").value;
+      let materno = document.getElementById("mat").value;
+      let puntaje = 0;
+
+      // Recorre todas las preguntas (asumiendo que hay 5 preguntas)
+      for (let i = 1; i <= 5; i++) {
+        // Se verifica cada respuesta posible (MB, B, R, M)
+        if (document.getElementById(`MB${i}`).checked) {
+          puntaje += 4;
+        } else if (document.getElementById(`B${i}`).checked) {
+          puntaje += 3;
+        } else if (document.getElementById(`R${i}`).checked) {
+          puntaje += 2;
+        } else if (document.getElementById(`M${i}`).checked) {
+          puntaje += 1;
+        }
+      }
+
+      // Lógica para determinar el resultado basado en el puntaje
+      let evaluacion = "";
+      let estrella="";
+      if (puntaje >= 18) {
+        evaluacion = "Muy Buena";
+        estrella ="★ ★ ★ ★";
+      } else if (puntaje >= 15) {
+        evaluacion = "Buena";
+        estrella ="★ ★ ★";
+      } else if (puntaje >= 11) {
+        evaluacion = "Regular";
+        estrella ="★ ★";
+      } else {
+        evaluacion = "Mala";
+        estrella ="★";
+      }
+
+      // Muestra el resultado final
+      document.write("<body style='background-color: #93abb6; padding: 0px;'>")
+      document.write("<div style='background-color: #93abb6; padding: 0px;'>"); // Establece el fondo solo para este div
+      document.write("<br><br><P ALIGN='CENTER'><FONT COLOR='#061124' size='6'><B>"+`Hola ${nombre} ${paterno} ${materno}<br> Gracias por haber participado en nuestra encuesta<br>`
+            + `Segun los datos recibidos la calificacion que nos das es: <br>`
+            + "<P ALIGN='CENTER'><FONT COLOR='#061124' size='8'><B>"+`${evaluacion}`
+            + "<P ALIGN='CENTER'><FONT COLOR='yellow' size='8'><B>"+`${estrella}`);
+      document.write("</div>");
+      document.write("<br><br><div style='text-align:center;'>");
+      document.write("<button onclick='window.location.href=\"../index.html\";' style='padding: 10px 20px; background-color: #061124; color: white; font-size: 16px; border: none; cursor: pointer;border-radius: 10px;'>Volver</button>");
+    }
+</script>
+</body>
+</html>
